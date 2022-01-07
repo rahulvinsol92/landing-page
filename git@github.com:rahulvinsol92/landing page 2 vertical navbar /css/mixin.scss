@@ -1,0 +1,66 @@
+@mixin primary-heading () {
+
+  font-family: $myfont;
+  font-size: 36px;
+  color: #3d2514;
+  font-weight: bold;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  animation-name: slide;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+
+}
+
+@mixin slide () {
+  @keyframes slide {
+    0% {
+      color: red;
+      left: 0px;
+      top: 0px;
+    }
+
+    25% {
+      color: yellow;
+      left: 200px;
+      top: 0px;
+    }
+
+  }
+
+}
+
+@mixin toggle ($top, $left) {
+  position: absolute;
+  top: $top;
+  left: $left;
+
+}
+
+
+
+
+
+@mixin responsive () {
+
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+
+}
+
+
+
+@mixin for-phone-only {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+
+@mixin for-tablet-only {
+  @media (min-width: 768px)and(max-width: 1024px) {
+    @content;
+  }
+}
